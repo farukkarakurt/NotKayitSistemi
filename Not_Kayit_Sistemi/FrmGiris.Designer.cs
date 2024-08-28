@@ -78,6 +78,7 @@
             this.Name = "FrmGiris";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Öğrenci Not Kayıt Sistemi";
+            this.Load += new System.EventHandler(this.FrmGiris_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

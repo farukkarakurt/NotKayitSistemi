@@ -37,7 +37,14 @@ namespace Not_Kayit_Sistemi
             {
                 FrmOgrtmnDetay frm=new FrmOgrtmnDetay();
                 frm.Show();
+
+                // Emir Karakurt
             }
+        }
+
+        private void FrmGiris_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
