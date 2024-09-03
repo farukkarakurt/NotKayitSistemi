@@ -54,9 +54,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dbNotKayıtDataSet = new Not_Kayit_Sistemi.DbNotKayıtDataSet();
-            this.tBLDERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tBLDERSTableAdapter = new Not_Kayit_Sistemi.DbNotKayıtDataSetTableAdapters.TBLDERSTableAdapter();
             this.oGRIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oGRNUMARADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oGRADDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,13 +63,16 @@
             this.oGRS3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRTALAMADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dURUMDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tBLDERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbNotKayıtDataSet = new Not_Kayit_Sistemi.DbNotKayıtDataSet();
+            this.tBLDERSTableAdapter = new Not_Kayit_Sistemi.DbNotKayıtDataSetTableAdapters.TBLDERSTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbNotKayıtDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLDERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbNotKayıtDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -177,6 +177,7 @@
             this.btn_guncelle.TabIndex = 3;
             this.btn_guncelle.Text = "Güncelle";
             this.btn_guncelle.UseVisualStyleBackColor = true;
+            this.btn_guncelle.Click += new System.EventHandler(this.btn_guncelle_Click);
             // 
             // txt_Sınav3
             // 
@@ -328,20 +329,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(869, 269);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dbNotKayıtDataSet
-            // 
-            this.dbNotKayıtDataSet.DataSetName = "DbNotKayıtDataSet";
-            this.dbNotKayıtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBLDERSBindingSource
-            // 
-            this.tBLDERSBindingSource.DataMember = "TBLDERS";
-            this.tBLDERSBindingSource.DataSource = this.dbNotKayıtDataSet;
-            // 
-            // tBLDERSTableAdapter
-            // 
-            this.tBLDERSTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // oGRIDDataGridViewTextBoxColumn
             // 
@@ -407,6 +395,20 @@
             this.dURUMDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.dURUMDataGridViewCheckBoxColumn.Name = "dURUMDataGridViewCheckBoxColumn";
             // 
+            // tBLDERSBindingSource
+            // 
+            this.tBLDERSBindingSource.DataMember = "TBLDERS";
+            this.tBLDERSBindingSource.DataSource = this.dbNotKayıtDataSet;
+            // 
+            // dbNotKayıtDataSet
+            // 
+            this.dbNotKayıtDataSet.DataSetName = "DbNotKayıtDataSet";
+            this.dbNotKayıtDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tBLDERSTableAdapter
+            // 
+            this.tBLDERSTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmOgrtmnDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -430,8 +432,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbNotKayıtDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBLDERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbNotKayıtDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
